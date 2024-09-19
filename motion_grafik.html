@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Underside</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        background: url("img/baggrund_gul.svg") no-repeat center center fixed;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+      }
+
+      .tv-wrapper {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 50vw;
+        height: auto;
+        margin-bottom: 40px;
+      }
+
+      .video-container {
+        position: relative;
+        width: 130%;
+        padding: 20px;
+        border: 1px solid #ffffff;
+        border-radius: 15px;
+        background-color: #000000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        margin-top: 109px;
+        margin-left: -90px;
+        margin-bottom: 120px;
+      }
+
+      .tv-frame {
+        position: absolute;
+        top: -190px;
+        left: -120px;
+        width: 130%;
+        height: auto;
+        z-index: 2;
+        pointer-events: none; /* Tillader klik på videoen gennem tv-rammen */
+      }
+
+      video {
+        width: 90%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      @media (max-width: 768px) {
+        .tv-wrapper {
+          max-width: 90vw;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .tv-wrapper {
+          max-width: 100vw;
+        }
+      }
+
+      .header {
+        background-color: #f48c24;
+        padding: 40px;
+        width: 100%;
+        max-width: 1400px;
+        border-radius: 10px;
+        margin-bottom: 40px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        margin-top: 450px;
+        margin-bottom: 200px;
+      }
+
+      .header h1 {
+        font-family: "Roboto", sans-serif;
+        font-size: 3.5rem;
+        margin-bottom: 15px;
+        color: #e1ca5d;
+      }
+
+      .header p {
+        font-size: 1.3rem;
+        color: #ecefe3;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <h1>Livets Kage – Tag en Bid af Det Hele</h1>
+      <p>
+        I en tid, hvor stress og jag dominerer, mindede Master Fatman os om at
+        tage en dyb indånding og nyde livets søde øjeblikke. Livet er som en
+        stor kage – og du skal ikke nøjes med en lille bid. Tag det hele ind, og
+        del glæden med dem omkring dig.
+        <br />
+        <br />
+        Træd ind i Master Fatmans univers, og lad dig inspirere til at leve
+        livet lidt friere, lidt sjovere og med lidt mere kærlighed. Det er tid
+        til at sprede good vibes og huske på, at livet – præcis som Master
+        Fatman sagde – er for kort til dårlig karma og kedelige kager.
+      </p>
+    </header>
+
+    <div class="tv-wrapper">
+      <div class="video-container" id="videoContainer">
+        <video
+          poster="img/cover.webp"
+          src="https://elinacreatives.dk/kea/11b_indholdsproduktion/done_MF_video.mp4"
+          controls
+        ></video>
+      </div>
+      <img src="img/tv.png" alt="TV frame" class="tv-frame" id="tvFrame" />
+    </div>
+
+    <script>
+      const videoContainer = document.getElementById("videoContainer");
+      const tvFrame = document.getElementById("tvFrame");
+
+      videoContainer.addEventListener("click", function () {
+        tvFrame.style.display = "none"; // Skjuler tv-rammen ved klik på video-container
+      });
+    </script>
+  </body>
+</html>
