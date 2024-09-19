@@ -76,6 +76,12 @@ iframe {
   border: none;
 }
 
+.video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1920/750;
+}
+
 @media (max-width: 768px) {
   .header {
     background-color: #f48c24;
